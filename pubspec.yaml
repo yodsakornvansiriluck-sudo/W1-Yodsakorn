@@ -22,13 +22,14 @@ flutter:
 
   uses-material-design: true
 
-  # assets:
-  #   - images/
+  assets:
+    - assets/icons/
 
 # ----------------------------
 #  Flutter Launcher Icons Config
 # ----------------------------
-flutter_launcher_icons:
+flutter_icons:
   android: true
   ios: true
   image_path: "assets/icons/img_1.png"
+
