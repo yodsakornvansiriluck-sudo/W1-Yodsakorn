@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-//scafflod  โครงสร้างของหน้าเหมือนพวก htmL
-//Padding ใช้เพื่อ เพิ่มพื้นที่ว่างรอบ ๆ widget
-//SafeArea คือ widget ที่ทำให้เนื้อหาภายในไม่ถูกบัง
+
 void main() {
-  runApp(const MyApp());  //เปิดใช้งานflutter
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});                // เป็นการใช้คีย์ key ในการสร้าง widget
-//ตัวเชื่อมหน้า2
-  @override                                 //ใช้เมื่อ เขียนทับ method หรือ property
+  const MyApp({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
@@ -26,7 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});     //ส่งค่าkey
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -154,12 +152,12 @@ class MyHomePage extends StatelessWidget {
 
                     onPressed: () => Navigator.pushNamed(context, '/second'),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange,
-                        foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: -11),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(0)
-                        )
+                      backgroundColor: Colors.orange,
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.symmetric(vertical: -11),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(0)
+                      )
                     ),
                     child: Text("Go To Second"),
                   ),
@@ -231,10 +229,10 @@ class SecondPage extends StatelessWidget {
                   ),
                   const SizedBox(width: 16),
 
-                  Column(                                           //colum ทำให้เป็นแนวตั้ง
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
-                      Row(                                         //row แนวนอน
+                      Row(
                         children: [
                           Icon(Icons.person, size: 16),
                           SizedBox(width: 6),
