@@ -184,7 +184,7 @@ class SecondPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top bar
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -212,7 +212,7 @@ class SecondPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Avatar + Stats
+
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -260,7 +260,7 @@ class SecondPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Username
+
               Row(
                 children: const [
                   Text(
@@ -328,7 +328,7 @@ class SecondPage extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // Grid images
+
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
