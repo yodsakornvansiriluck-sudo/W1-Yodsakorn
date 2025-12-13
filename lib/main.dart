@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//scafflod  โครงสร้างของหน้าเหมือนพวก htmL
+//scafflod  โครงสร้างของหน้าui
 //Padding ใช้เพื่อ เพิ่มพื้นที่ว่างรอบ ๆ widget
 //SafeArea คือ widget ที่ทำให้เนื้อหาภายในไม่ถูกบัง
 void main() {
@@ -8,10 +8,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});                // เป็นการใช้คีย์ key ในการสร้าง widget
-//ตัวเชื่อมหน้า2
+
   @override                                 //ใช้เมื่อ เขียนทับ method หรือ property
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(  //return ค่า  มี title theme  initialRoute
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -34,8 +34,8 @@ class MyHomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(),
+            Container( width: double.infinity,
+              padding: EdgeInsets.only(top: 20, bottom: 20,),
               decoration: BoxDecoration(color: Colors.red[200]),
               child: Column(
                 children: [
@@ -91,6 +91,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [Text("เบอร์โทรศัพท์"), Text("087-545-1236")],
                       ),
                     ],
@@ -108,6 +109,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [Text("วันเกิด"), Text("22 ตุลาคม 2548")],
                       ),
                     ],
@@ -125,6 +127,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [Text("ที่อยู่่"), Text("223/8 ชลบุรี")],
                       ),
                     ],
@@ -142,7 +145,9 @@ class MyHomePage extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+
                           Text("การศึกษา"),
                           Text("วิทยาลัยเทคโนโลยีภาคตะวันออก (อี.เทค)"),
                         ],
@@ -179,171 +184,221 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F1F7),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(16),
+              width: double.infinity,
+              child: Column(
                 children: [
-                  const Text("8:28", style: TextStyle(fontSize: 16)),
-                  Container(
-                    width: 90,
-                    height: 28,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "DEBUG",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                          color: Colors.red,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 20),
-
-
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    child: ClipOval(
-                      child: Image.asset(
-                        "assets/icons/img.png",
-                        width: 80,
-                        height: 80,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-
-                  Column(                                           //colum ทำให้เป็นแนวตั้ง
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Row(                                         //row แนวนอน
-                        children: [
-                          Icon(Icons.person, size: 16),
-                          SizedBox(width: 6),
-                          Text("9 กำลังติดตาม"),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(Icons.groups, size: 16),
-                          SizedBox(width: 6),
-                          Text("888K ผู้ติดตาม"),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(Icons.favorite, size: 16),
-                          SizedBox(width: 6),
-                          Text("930K ถูกใจและบันทึก"),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 20),
-
-
-              Row(
-                children: const [
-                  Text(
-                    "yodsakorn vansiriluck",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(width: 6),
-                  Icon(Icons.verified, color: Colors.redAccent, size: 20),
-                ],
-              ),
-
-              Row(
-                children: const [
-                  Icon(Icons.tiktok, color: Colors.black, size: 13),
-                  Text(
-                    "yodsakorn ",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(width: 6),
-                  Icon(Icons.arrow_drop_down, color: Colors.black, size: 13),
-                ],
-              ),
-
-
-              Row(
-                children: [
-
-                  Expanded(
-                    child: Container(
-                      height: 45,
-                      decoration: BoxDecoration(
-                        color: Colors.redAccent,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "ติดตาม",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(4),
+                        child: ClipOval(
+                          child: Image.network(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoz4equ265Ys7oyArnMYZL-YYMLSxWMH_s1cjKq6gXgb22yasYTotc-v862Z5bIrWI_mg&usqp=CAU",
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
+                      SizedBox(width: 15),
+                      Container(
+                        child: Column(
+                          children: [
+                            Text(
+                              "56",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "กำลังติดตาม",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 1,
+                          horizontal: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.symmetric(
+                            vertical: BorderSide(
+                              color: Colors.grey.shade400,
+                              width: 2,
+                            ),
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            Text(
+                              "56",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "ผู้ติดตาม",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Container(
+                        child: Column(
+                          children: [
+                            Text(
+                              "56",
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "ถูกใจและบันทึก",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    child: Row(
+                      children: [
+                        Text(
+                          "yodsakorn vansiriluck ",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Icon(Icons.verified, color: Colors.blue),
+                      ],
                     ),
                   ),
-                  const SizedBox(width: 10),
                   Container(
-                    height: 45,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 4,
-                          offset: Offset(1, 1),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.tiktok,
+                          color: Colors.grey.shade500,
+                          size: 13,
+                        ),
+                        Text(
+                          " yodsakorn ",
+                          style: TextStyle(
+                            color: Colors.grey.shade500,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Icon(
+                          Icons.arrow_drop_down,
+                          color: Colors.grey.shade500,
+                          size: 13,
                         ),
                       ],
                     ),
-                    child: const Icon(Icons.share),
                   ),
+                  SizedBox(height: 20),
+
+                  Container(
+                    child: Row(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () => Navigator.pushNamed(context, '#'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            fixedSize: Size(300, 20),
+                          ),
+                          child: Text(
+                            'ติดตาม',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Icon(Icons.share, color: Colors.black),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                      child:
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.all(4),
+                                child: Image.network(
+                                  "https://mpics-cdn.mgronline.com/pics/Images/559000000223001.JPEG",
+                                  width: 180,
+                                  height: 180,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(4),
+                                child: Image.network(
+                                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1gmv5-pF503kY6uLoj9DlDpFwgJCaPTZFYtkLhFl-akyqX4TYD_nYbwHqXZkt3bQoo70&usqp=CAU",
+                                  width: 180,
+                                  height: 180,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )
+                  ),
+                  SizedBox(height: 340),
+                  Container(
+                      child:
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () => Navigator.pushNamed(context, '/'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red,
+                              fixedSize: Size(300, 20),
+                            ),
+                            child: Text(
+                              'ไปยังหน้าแรก',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      )
+                  )
                 ],
               ),
-
-              const SizedBox(height: 20),
-
-
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  children: [
-                    Image.asset("assets/icons/img_1.png"),
-                    Image.asset("assets/icons/img_1.png"),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
