@@ -6,12 +6,12 @@ void main() {
   runApp(const MyApp());  //เปิดใช้งานflutter
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {       //widget
   const MyApp({super.key});                // เป็นการใช้คีย์ key ในการสร้าง widget
 
   @override                                 //ใช้เมื่อ เขียนทับ method หรือ property
   Widget build(BuildContext context) {
-    return MaterialApp(  //return ค่า  มี title theme  initialRoute
+    return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -118,7 +118,7 @@ class MyHomePage extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.pinkAccent[100],
                           borderRadius: BorderRadius.circular(5),
@@ -155,25 +155,31 @@ class MyHomePage extends StatelessWidget {
                     ],
                   ),
 
-                  ElevatedButton(
-
-                    onPressed: () => Navigator.pushNamed(context, '/second'),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange,
-                        foregroundColor: Colors.white,
-                        padding: EdgeInsets.symmetric(vertical: -11),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(0)
-                        )
-                    ),
-                    child: Text("Go To Second"),
-                  ),
-                ],
-              ),
-            ),
+                  Container(
+                      child:
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () => Navigator.pushNamed(context, '/second'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red,
+                              fixedSize: Size(300, 20),
+                            ),
+                            child: Text(
+                              'Go To Second',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      )
+                  )
           ],
         ),
       ),
+        ],
+      ),
+    ),
     );
   }
 }
