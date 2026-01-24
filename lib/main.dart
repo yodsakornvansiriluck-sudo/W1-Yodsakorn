@@ -118,7 +118,7 @@ class MyHomePage extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                          padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.pinkAccent[100],
                           borderRadius: BorderRadius.circular(5),
@@ -174,12 +174,12 @@ class MyHomePage extends StatelessWidget {
                         ],
                       )
                   )
+                ],
+              ),
+            ),
           ],
         ),
       ),
-        ],
-      ),
-    ),
     );
   }
 }
